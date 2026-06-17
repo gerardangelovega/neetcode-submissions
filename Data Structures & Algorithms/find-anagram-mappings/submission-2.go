@@ -1,0 +1,14 @@
+func anagramMappings(nums1 []int, nums2 []int) []int {
+	m := make(map[int]int)
+	res := make([]int, len(nums1))
+
+	for i, num := range nums2 {
+		m[num] = i
+	}
+
+	for i, num := range nums1 {
+		res[i] = m[num]
+	}
+
+	return res
+}
